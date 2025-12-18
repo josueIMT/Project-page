@@ -119,12 +119,10 @@
       
       Generating physically plausible hand-object interactions from
 textual descriptions remains a challenging problem. Although diffusion-based motion models capture semantic intent and kinematic variability, 
-they often lack explicit geometric reasoning during denoising, lead-
-ing to weak contact and severe interpenetration. We introduce GCD, a
+they often lack explicit geometric reasoning during denoising, leading to weak contact and severe interpenetration. We introduce GCD, a
 geometry-constrained dual-stream diffusion framework that embeds geometric awareness directly into the latent denoising trajectory.
 GCD first predicts a 3D contact probability field from the object mesh
-and text, providing spatial priors for interaction hotspots. Motion syn-
-thesis is then guided by two complementary conditioning pathways: an
+and text, providing spatial priors for interaction hotspots. Motion synthesis is then guided by two complementary conditioning pathways: an
 object stream that encodes global semantic intent, and a hand stream
 that fuses textual cues, object features, and the predicted contact field
 to align motion with local geometric structure.
