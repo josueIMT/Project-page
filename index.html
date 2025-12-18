@@ -112,7 +112,35 @@
   </a>
     </div>
   </header>
-
+<section id="abstract" class="section" aria-label="Abstract">
+  <div class="container">
+    <h3>Abstract</h3>
+    <p class="lead">
+      
+      Generating physically plausible hand-object interactions from
+textual descriptions remains a challenging problem. Although diffusion-
+based motion models capture semantic intent and kinematic variabil-
+ity, they often lack explicit geometric reasoning during denoising, lead-
+ing to weak contact and severe interpenetration. We introduce GCD, a
+geometry-constrained dual-stream diffusion framework that embeds ge-
+ometric awareness directly into the latent denoising trajectory.
+GCD first predicts a 3D contact probability field from the object mesh
+and text, providing spatial priors for interaction hotspots. Motion syn-
+thesis is then guided by two complementary conditioning pathways: an
+object stream that encodes global semantic intent, and a hand stream
+that fuses textual cues, object features, and the predicted contact field
+to align motion with local geometric structure.
+To further ensure geometric plausibility, GCD incorporates two dedi-
+cated modules. A Geometry Predictor extracts timestep-dependent ge-
+ometry embeddings and estimates penetration likelihoods from noisy
+hand–object trajectories. A Geometry Corrector refines latent features
+through gated, geometry-aware modulation. Together, these modules im-
+pose a differentiable, timestep-aware geometric constraint throughout
+denoising, improving contact stability and substantially reducing pene-
+tration artifacts.
+    </p>
+  </div>
+</section>
   
   <section id="results" class="section" aria-label="Results">
     <div class="container">
