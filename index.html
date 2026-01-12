@@ -117,20 +117,15 @@
     <h3>Abstract</h3>
     <p class="lead">
       
-      Generating physically plausible hand-object interactions from
-textual descriptions remains a challenging problem. Although diffusion-based motion models capture semantic intent and kinematic variability, 
-they often lack explicit geometric reasoning during denoising, leading to weak contact and severe interpenetration. We introduce GCD, a
-geometry-constrained dual-stream diffusion framework that embeds geometric awareness directly into the latent denoising trajectory.
-GCD first predicts a 3D contact probability field from the object mesh
-and text, providing spatial priors for interaction hotspots. Motion synthesis is then guided by two complementary conditioning pathways: an
-object stream that encodes global semantic intent, and a hand stream
-that fuses textual cues, object features, and the predicted contact field
-to align motion with local geometric structure.
-To further ensure geometric plausibility, GCD incorporates two dedicated modules. A Geometry Predictor extracts timestep-dependent geometry 
-embeddings and estimates penetration likelihoods from noisy
-hand–object trajectories. A Geometry Corrector refines latent features
-through gated, geometry-aware modulation. Together, these modules impose a differentiable, timestep-aware geometric constraint throughout
-denoising, improving contact stability and substantially reducing penetration artifacts.
+      Generating physically plausible hand–object interactions from
+text remains challenging: diffusion models often lack explicit geometric feedback, leading to weak contact and interpenetration. 
+We propose GCD, a geometry-constrained dual-stream diffusion framework for
+text-driven 3D hand–object motion synthesis. GCD embeds timestep-dependent geometric reasoning into the denoising trajectory 
+via a Geometry Predictor–Corrector that extracts geometric embeddings from
+noisy motions and injects them back through gated modulation.
+Our asymmetric conditioning separates global object intent (text-only)
+from local hand feasibility (text + geometric priors), including a predicted contact probability field used solely as a conditioning prior. 
+Experiments on GRAB, ARCTIC, and H2O show that GCD reduces penetration and improves contact stability while preserving strong text alignment.
     </p>
   </div>
 </section>
